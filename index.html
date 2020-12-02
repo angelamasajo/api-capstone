@@ -21,9 +21,11 @@
         <section id="weather-section">
             <h2>First Stop: What's the Weather?</h2>
             <div class="weather-input">
-                <p class="weather-instruction">Pick your desired location by city, and we'll pull up the weather forecast.</p>
                 <form id="weather-form">
                     <!--INPUT WEATHER FORM HERE-->
+                    <label for="weather-instruction">Pick your desired location by city, and we'll pull up the weather forecast.</label>
+                    <input type="text" id="city" required placeholder="Chicago">
+                    <input type="submit" value="SUBMIT" class="button">
                 </form>
             </div>
         </section>
@@ -33,22 +35,17 @@
             <ul id="weather-list"></ul>
         </section>
 
-        <section id="pick-day">
-            <h2>Second Stop: Which day?</h2>
-            <div class="date-choices">
-                <p class="day-instruction">Based on the weather, what day do you think is best?</p>
-                <form id="date-form">
-                    <!--INPUT DATE FORM HERE-->
-                </form>
-            </div>
-        </section>
+
+        
 
         <section id="brewery-section">
-            <h2>Third Stop: Let's look at some breweries!</h2>
+            <h2>Next Stop: Let's look at some breweries!</h2>
             <div class="weather-input">
-                <p class="brewery-preference">Enter the city of preference</p>
-                <form id="weather-form">
+                <form id="brewery-form">
                     <!--INPUT BREWERY FORM HERE-->
+                    <label for="brewery-instruction">Pick your desired location by city, and we'll pull up the weather forecast.</label>
+                    <input type="text" id="city-brewery" required placeholder="Chicago">
+                    <input type="submit" value="SUBMIT" class="button">
                 </form>
             </div>
         </section>
@@ -58,15 +55,8 @@
             <ul id="brewery-list"></ul>
         </section>
 
-        <section id="pick-brewery">
-            <h2>Fourth Stop: Which brewery?</h2>
-            <div class="brewery-choices">
-                <p class="brewery-instruction">Based on the breweries on this list, where will you meet?</p>
-                <form id="date-form">
-                    <!--INPUT BREWERY CHOICE FORM HERE-->
-                </form>
-            </div>
-        </section>
+
+
 
         <section id="msg-template">
             <h2>Last Stop: Invite your friends!</h2>
@@ -77,27 +67,6 @@
             </div>
         </section>
 
-
-
-
-
-
-        <!-- <form id="js-form-weather">
-            <p><label for="js-search-term">Search for parks by states, separated by commas</label></p>
-            <input type="text" name="search-term" id="js-search-term" required>
-
-            <p><label for="js-max-results">Max results to return</label></p>
-            <input type="number" name="max-results" id="js-max-results" value="10">
-            <br><br>
-            <input type="submit" class="user-submit" value="SEARCH">
-        </form>
-
-        <p id="js-error-message" class="error-message"></p>
-        <section id="results" class="hidden">
-          <h2>Search results</h2>
-          <ul id="results-list">
-          </ul> -->
-        </section>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="index.js"></script>
