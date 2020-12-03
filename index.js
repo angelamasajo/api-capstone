@@ -1,8 +1,10 @@
 'use strict';
 
+
+//city functions for the weather and brewery
 function getWeatherInfo (cityNameWeather) {
     cityNameWeather = cityNameWeather.replace(/ /g,"+");
-    let weatherUrl = `https://www.metaweather.com/api/location/search/?query=${cityNameWeather}`
+    let weatherUrl = `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${cityNameWeather}`
 
     fetch(weatherUrl)
         .then(response => {
@@ -13,6 +15,11 @@ function getWeatherInfo (cityNameWeather) {
         .then(responseJson => console.log(responseJson))
         .catch(error => alert ('Something went wrong.'))
 }
+
+
+// function getWoeId (location) {
+//     let location = 
+// }
 
 function getBreweryInfo (cityName) {
     cityName = cityName.replace(/ /g,"_");
