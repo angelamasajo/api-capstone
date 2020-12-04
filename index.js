@@ -73,39 +73,41 @@ function displayResults(responseJson) {
     $('#brewery-results').removeClass('hidden');
 };
 
-// function pickBrewery () {
-//     $('#pick-brewery-form').on('submit', event => {
-//         event.preventDefault ();
-//         console.log('pickBrewery ran');
-//         //clears out the list
-//         $('#brewery-results').empty();
-//         //assigning variables; goal is to include name and address of the brewery in the final message
-//         let title = $(event.target).closest('#pick-brewery-form').find('#input').val();
-//         let address = $(event.target).closest('#pick-brewery-form').find('#brewery-address').val();
-//         //adding the brewery name and address in the final message to copy and paste
-//         $('#final-message').removeClass('hidden');
-//         let div = document.getElementById('#final-message');
-//         let content = document.createTextNode(`${title}, ${address}`);
-//         div.appendChild(content);
-//     })
-// }
+function pickBrewery () {
+    $('#brewery-results').on('submit', event => {
+        event.preventDefault();
+        console.log('pickBrewery ran');
+        //clears out the list
+        //assigning variables; goal is to include name and address of the brewery in the final message
+        let title = $(event.target).closest('#pick-brewery-form').find('#input').text();
+        console.log(title);
+        let address = $(event.target).closest('#pick-brewery-form').find('#brewery-address').text();
+        console.log(address);
+        $('#brewery-results').empty();
+        //adding the brewery name and address in the final message to copy and paste
+        $('.message').removeClass('hidden');
+        // let div = document.getElementById('#final-message');
+        // let content = document.createTextNode(`${title}, ${address}`);
+        // div.appendChild(content);
+        showInviteMessage(title, address)
+    })
+}
 
 
 
-// function showInviteMessage () {
-//     $('#pick-brewery-form').on('submit',  event => {
-//         event.preventDefault();
-//         $('#final-message').append(
-//             `<p>
-//             Hello friends! I think it's time for all of us to catch up! I would love it if you can join me at (brewery) located 
-//             in (street), (city). The weather is supposed to be nicest on (date), so it's probably a good idea to go then! Please 
-//             respond to this message if you can make it so we can get more details figured out. Hope you can make it!
-//             </p>
-//             `
-//         )
-//         $('#final-message').removeClass('hidden');
-//     })
-// }
+function showInviteMessage (title, address) {
+    $('.message').html(
+            `<p>
+            Now that you've chosen your time and location, copy and paste the information below and send to your friends!
+
+            Hello friends! I think it's time for all of us to catch up! I would love it if you can join me at ${title} located 
+            in ${address}, (city). The weather is supposed to be nicest on (date), so it's probably a good idea to go then! Please 
+            respond to this message if you can make it so we can get more details figured out. Hope you can make it!
+            </p>
+            `
+     )
+}
+
 
 
 function watchBrewerySearchForm() {
@@ -120,4 +122,4 @@ function watchBrewerySearchForm() {
 }
 
 $(watchBrewerySearchForm);
-// $(pickBrewery);
+$(pickBrewery);
