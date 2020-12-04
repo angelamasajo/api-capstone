@@ -27,9 +27,9 @@
     display: none;
   }
 
-  .user-submit {
+  .button {    
     color: black;
-    background-color: seagreen;
+    background-color: lightblue;
     display: block;
     text-align: center;
     padding: 10px 50px;
