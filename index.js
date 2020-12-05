@@ -1,41 +1,46 @@
 'use strict';
 
 
-//FETCHING WEATHER INFORMATION
-// function getWoeId (cityNameWeather) {
-//     //replacing spaces with +
-//     cityNameWeather = cityNameWeather.replace(/ /g, '+');
-//     //fetching woeid info from city input
-//     let weatherUrl = `https://www.metaweather.com/api/location/search/?query=${cityNameWeather}`
-//     console.log(cityNameWeather)
-//     fetch(weatherUrl)
-//         .then(response => {
-//             if (response.ok) {
-//                 return response.json();
-//             }
-//         })
-//         .then(responseJson => console.log(responseJson))
-//         .catch(error => alert ('Something went wrong.'))
-    
-//     // return responseJson[0].woeid;
-// }
+// FETCHING WEATHER INFORMATION
+function getWeatherInfo (cityNameWeather) {
+    console.log(cityNameWeather)
+    //replacing spaces with +
+    cityNameWeather = cityNameWeather.replace(/ /g, '+');
+    //fetching woeid info from city input
+    let weatherUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${cityNameWeather}&appid=1797367c5f35ceaf3262c0d376362893&units=imperial`
+    fetch(weatherUrl)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .then(responseJson => console.log(responseJson))
+        .catch(error => alert ('Something went wrong.'))
+}
 
-// $(getWoeId);
+// http://api.openweathermap.org/data/2.5/forecast?q=milwaukee&appid=1797367c5f35ceaf3262c0d376362893&units=imperial
+
+//DISPLAYING WEATHER INFO
+function displayWeatherResults(responseJson) {
+    // console.log(responseJson, 'displayWeatherResults ran');
+    $('#weather-list').empty();
+    for (let i = 0; i < responseJson.list.length; i = i + 8) {
+        $('#weather-list').append(
+            `<li>
+            <form id="pick-day-form">
+            <h3><a href='${responseJson.list[i]}' id="inputWeather" target="_blank">${responseJson.list[i].dt_txt}</a></h3>
+            <p id="weather-description">${responseJson.list[i].weather.description}</p>
+            <input type="submit" value="I want this day" class="button">
+            </form>
+            </li>`
+        )
+    };
+    $('#weather-results').removeClass('hidden');
+};
+
+$(displayWeatherResults)
 
 
-// function getWeatherInfo (woeId) {
-//     woeId = INSERTEXPRESSIONHERERERERER;
-//     let woeIdUrl = `https://www.metaweather.com/api/location/${woeid}/`;
-//     console.log(woeId);
-//     fetch(woeIdUrl)
-//         .then(response => {
-//             if (response.ok) {
-//                 return response.json();
-//             } 
-//         })
-//         .then(responseJson => console.log(responseJson));
-//         .catch(error => alert ('Something went wrong.'));
-// }
 
 
 
@@ -114,12 +119,20 @@ function watchBrewerySearchForm() {
     $('#brewery-form').submit(event => {
         event.preventDefault();
         const cityName = $('#city-brewery').val();
-        // const cityNameWeather = $('#city').val();
-        // const maxResults = $('#js-max-results').val();
-        // getWeatherInfo(cityNameWeather);
         getBreweryInfo (cityName);
     });
 }
 
+function onWeatherSubmit (cityNameWeather) {
+    $('#weather-form').submit(event => {
+        event.preventDefault();
+        const cityNameWeather = $('#city').val();
+        // const cityNameWeather = $('#city').val();
+        // const maxResults = $('#js-max-results').val();
+        getWeatherInfo(cityNameWeather);
+    });
+}
+
+$(onWeatherSubmit)
 $(watchBrewerySearchForm);
 $(pickBrewery);
