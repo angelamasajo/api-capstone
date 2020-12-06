@@ -3,13 +3,16 @@
 //----------------------------WEATHER INFO--------------------------/
 
 
+
+
+
 // FETCHING WEATHER INFORMATION
 function getWeatherInfo (cityNameWeather) {
     console.log(cityNameWeather)
     //replacing spaces with +
     cityNameWeather = cityNameWeather.replace(/ /g, '+');
     //fetching woeid info from city input
-    let weatherUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${cityNameWeather}&appid=1797367c5f35ceaf3262c0d376362893&units=imperial`
+    let weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityNameWeather}&appid=1797367c5f35ceaf3262c0d376362893&units=imperial`
     fetch(weatherUrl)
         .then(response => {
             if (response.ok) {
