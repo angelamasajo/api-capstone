@@ -1,6 +1,6 @@
 'use strict';
 
-//----------------------------WEATHER INFO--------------------------/
+//----------------------------WEATHER INFO--------------------------//
 let current_obj = {};
 
 
@@ -120,12 +120,16 @@ function pickBrewery () {
     })
 }
 
+
+//---------------FINAL MESSAGE DISPLAY-------------------//
+
+
 function displayData(current_obj) { 
     $('.message').append(
         `<h3> Now that you've chosen your time and location, copy and paste 
         the information below and send to your friends!
         </h3>
-        <p> Hello friends! I think it's time for all of us to catch up! 
+        <p class="final-msg"> Hello friends! I think it's time for all of us to catch up! 
         I would love it if you can join me at ${current_obj.title} 
         located in ${current_obj.address}, ${current_obj.cityBrewery}. 
         The weather is supposed to be nicest on ${current_obj.date}, 
@@ -136,20 +140,7 @@ function displayData(current_obj) {
 }
 
 
-// function showInviteMessage (title, address, cityBrewery) {
-//     $('.message').html(
-//             `<h3>
-//             Now that you've chosen your time and location, copy and paste the information below and send to your friends!
-//             </h3>
-//             <p>
-//             Hello friends! I think it's time for all of us to catch up! I would love it if you can join me at ${title} located 
-//             in ${address}, ${cityBrewery}. The weather is supposed to be nicest on (date), so it's probably a good idea to go then! Please 
-//             respond to this message if you can make it so we can get more details figured out. Hope you can make it!
-//             </p>
-//             `
-//      )
-// }
-
+//----------------------WATCH FORM------------------------------//
 
 
 function watchBrewerySearchForm() {

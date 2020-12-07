@@ -2,45 +2,95 @@
     box-sizing: border-box;
   }
   
-  body {
-    font-family: 'Roboto', sans-serif;
-  }
+body {
+  font-family: 'Roboto', sans-serif;
+}
   
-  button, input[type="text"] {
-    padding: 5px;
-  }
+button, input[type="text"] {
+  padding: 5px;
+}
   
-  button:hover {
-    cursor: pointer;
-  }
+.button:hover {
+  cursor: pointer;
+  background: #ff7b29;
+  border-radius: 20px;
+}
 
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .error-message {
-      color: red;
-  }
-  
-  .hidden {
-    display: none;
-  }
+.button {    
+  color: black;
+  background-color:#E69635;
+  display: block;
+  text-align: center;
+  padding: 10px 50px;
+  font-family: Verdana, Helvetica, sans-serif;
+  font-weight: bold;
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  margin: 20px 0px;
+  border-radius: 6px;
+  transition-property: background, border-radius;
+  transition-duration: .1s, .5s;
+  transition-timing-function: linear;
+}
 
-  .button {    
-    color: black;
-    background-color: lightblue;
-    display: block;
-    text-align: center;
-    padding: 10px 50px;
-    font-family: Verdana, Helvetica, sans-serif;
-    font-weight: bold;
-    border: 1px solid black;
-    border-radius: 10px;
-    margin: 20px 0px;
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: lightblue;
+  padding: 20px 25px;
+  opacity: 0.9;
+}
+  
+.error-message {
+  color: red;
+}
+  
+.hidden {
+  display: none;
 }
 
 #results {
     background-color: #BFFBDA;
     padding: 15px;
+}
+
+.final-msg {
+  background-color: lightblue;
+}
+
+h1 {
+  font-family: 'Press Start 2P', Helvetica;
+  font-size: 26px;
+  line-height: 32px;
+}
+
+h2 {
+  font-family: 'Press Start 2P', Helvetica;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+html {
+  min-height: 100%;
+  background-image: url(brewery-cblanco.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.final-msg {
+  background-color: white;
+  padding: 15px 20px;
+  line-height: 25px;
+}
+
+footer {
+  margin: 0 auto;
+  text-align: center;
+  font-weight: bold;
+  background-color:#E69635;
+  max-width: 700px;
+  padding: 20px 25px;
+  opacity: 0.9;
 }
