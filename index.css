@@ -4,6 +4,7 @@
   
 body {
   font-family: 'Roboto', sans-serif;
+  line-height: 25px;
 }
   
 button, input[type="text"] {
@@ -93,4 +94,14 @@ footer {
   max-width: 700px;
   padding: 20px 25px;
   opacity: 0.9;
+}
+
+.day-choice {
+  background-color: white;
+  padding: 10px 15px;
+  margin: 10px;
+}
+
+ul {
+  list-style-type: none;
 }

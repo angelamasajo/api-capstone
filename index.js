@@ -30,13 +30,15 @@ function displayWeatherResults(responseJson) {
     $('#weather-list').empty();
     for (let i = 0; i < responseJson.list.length; i = i + 8) {
         $('#weather-list').append(
-            `<li>
+            `<li><div class="day-choice">
             <form id="pick-day-form">
-            <h3><a href='${responseJson.list[i].dt_txt}' id="inputWeather" target="_blank">${responseJson.list[i].dt_txt}</a></h3>
+            <h3 id="inputWeather" target="_blank">${responseJson.list[i].dt_txt}</h3>
             <p id="weather-description">${responseJson.list[i].weather[0].description}</p>
+            <p id="high-temp">High: ${responseJson.list[i].main.temp_max}&#8457;</p>
+            <p id="low-temp">Low: ${responseJson.list[i].main.temp_min}&#8457;</p>
             <input type="submit" value="I want this day" class="button">
             </form>
-            </li>`
+            </div></li>`
         )
     };
     $('#weather-results').removeClass('hidden');
@@ -160,6 +162,16 @@ function onWeatherSubmit (cityNameWeather) {
         getWeatherInfo(cityNameWeather);
     });
 }
+
+// function handleRestartForm() {
+//     $('#msg-template').on('click', '.restart-form', (event) => {
+//       event.preventDefault();
+//       onWeatherSubmit();
+//       watchBrewerySearchForm();
+//       pickBrewery();
+//       pickDay();
+//     }
+// )};
 
 $(onWeatherSubmit)
 $(watchBrewerySearchForm);
