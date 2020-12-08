@@ -1,7 +1,31 @@
 * {
     box-sizing: border-box;
   }
-  
+
+header {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #104361;
+  padding: 20px 25px;
+  opacity: 0.9;
+}
+
+h1 {
+  font-family: 'Press Start 2P', Helvetica;
+  font-size: 30px;
+  line-height: 45px;
+  color: white;
+  text-align: center;
+}
+
+#intro p {
+  font-weight: bold;
+  font-size:  large;
+}
+
+#intro {
+  margin: 0 0 40px 0;
+}
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 25px;
@@ -38,7 +62,7 @@ button, input[type="text"] {
 .container {
   max-width: 700px;
   margin: 0 auto;
-  background-color: lightblue;
+  background-color: #B4DFFD;
   padding: 20px 25px;
   opacity: 0.9;
 }
@@ -58,12 +82,6 @@ button, input[type="text"] {
 
 .final-msg {
   background-color: lightblue;
-}
-
-h1 {
-  font-family: 'Press Start 2P', Helvetica;
-  font-size: 26px;
-  line-height: 32px;
 }
 
 h2 {
@@ -97,7 +115,7 @@ footer {
   opacity: 0.9;
 }
 
-.day-choice {
+.day-choice, .brewery-choice {
   background-color: white;
   padding: 10px 15px;
   margin: 10px;
@@ -105,4 +123,12 @@ footer {
 
 ul {
   list-style-type: none;
+}
+
+#city, #city-brewery {
+  background-color: #E6BC77;
+}
+
+#weather-list, #brewery-list {
+  padding-left: 0;
 }

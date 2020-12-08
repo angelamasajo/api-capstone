@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Brewery Hangout</title>
+    <title>To Beer or Not To Beer</title>
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header>
+        <h1>To Beer or <br>Not To Beer</h1>
+    </header>
     <div class="container">
-        <h1>To Beer or Not To Beer</h1>
         
         <section id="intro">
-            <p>Hello there, fellow beer fanatic! You came to the right place. Sometimes you just need to get a beer with friends after a long week, and we're here to help!</p>
+            <p>Hello there, fellow beer fanatic! Sometimes you just need to get a beer with friends after a long week, and we're here to help!</p>
             <p>With this app, you can select a city of your choice and plan around the weather. We don't always want to drive in the snow, rain, storm, so we made that decision making easier for you.</p>
-            <p>Enjoy!</p>
         </section>
         
         <section id="weather-section">
@@ -25,9 +26,9 @@
             <div class="weather-input">
                 <form id="weather-form">
                     <!--INPUT WEATHER FORM HERE-->
-                    <label for="weather-instruction">Pick your location by city, and we'll pull up the weather forecast.</label>
+                    <label for="city">Check out the weather by city.</label>
                     <br>
-                    <input type="text" id="city" required placeholder="Chicago">
+                    <input type="text" id="city" required placeholder="i.e., Chicago">
                     <br>
                     <input type="submit" value="SUBMIT" class="button">
                 </form>
@@ -47,9 +48,9 @@
             <div class="weather-input">
                 <form id="brewery-form">
                     <!--INPUT BREWERY FORM HERE-->
-                    <label for="brewery-instruction">Which city do you want to visit?</label>
+                    <label for="city-brewery">Which city do you want to visit?</label>
                     <br>
-                    <input type="text" id="city-brewery" required placeholder="Chicago">
+                    <input type="text" id="city-brewery" required placeholder="i.e., Chicago">
                     <br>
                     <input type="submit" value="SUBMIT" class="button">
                 </form>

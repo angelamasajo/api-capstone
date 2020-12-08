@@ -1,8 +1,8 @@
 'use strict';
 
-//----------------------------WEATHER INFO--------------------------//
 let current_obj = {};
 
+//----------------------------WEATHER INFO--------------------------//
 
 
 
@@ -26,7 +26,6 @@ function getWeatherInfo (cityNameWeather) {
 
 //DISPLAYING WEATHER INFO
 function displayWeatherResults(responseJson) {
-    // console.log(responseJson, 'displayWeatherResults ran');
     $('#weather-list').empty();
     for (let i = 0; i < responseJson.list.length; i = i + 8) {
         $('#weather-list').append(
@@ -87,13 +86,14 @@ function displayResults(responseJson) {
     $('#brewery-list').empty();
     for (let i = 0; i < responseJson.length; i++) {
         $('#brewery-list').append(
-            `<li>
+            `<li><div class="brewery-choice">
             <form id="pick-brewery-form">
             <h3><a href='${responseJson[i].url}' id="input" target="_blank">${responseJson[i].name}</a></h3>
             <p id="brewery-address">${responseJson[i].street}</p>
             <p id="brewery-city">${responseJson[i].city}</p>
             <input type="submit" value="I want to go here" class="button">
             </form>
+            </div>
             </li>`
         )
     };
@@ -163,17 +163,16 @@ function onWeatherSubmit (cityNameWeather) {
     });
 }
 
-// function handleRestartForm() {
-//     $('#msg-template').on('click', '.restart-form', (event) => {
-//       event.preventDefault();
-//       onWeatherSubmit();
-//       watchBrewerySearchForm();
-//       pickBrewery();
-//       pickDay();
-//     }
-// )};
+function handleRestartForm() {
+
+    $('#msg-template').on('click', '.restart-form', (event) => {
+      event.preventDefault();
+      location.reload();
+    }
+)};
 
 $(onWeatherSubmit)
 $(watchBrewerySearchForm);
 $(pickBrewery);
 $(pickDay);
+$(handleRestartForm);
