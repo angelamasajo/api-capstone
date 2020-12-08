@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,17 +11,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <h1>To Beer or <br>Not To Beer</h1>
     </header>
     <div class="container">
-        
+
         <section id="intro">
-            <p>Hello there, fellow beer fanatic! Sometimes you just need to get a beer with friends after a long week, and we're here to help!</p>
-            <p>With this app, you can select a city of your choice and plan around the weather. We don't always want to drive in the snow, rain, storm, so we made that decision making easier for you.</p>
+            <p>Hello there, fellow beer fanatic! Sometimes you just need to get a beer with friends after a long week,
+                and we're here to help!</p>
+            <p>With this app, you can select a city of your choice and plan around the weather. We don't always want to
+                drive in the snow, rain, storm, so we made that decision making easier for you.</p>
         </section>
-        
+
         <section id="weather-section">
             <h2>First Stop: What's the Weather?</h2>
             <div class="weather-input">
@@ -34,7 +38,7 @@
                 </form>
             </div>
         </section>
-        
+
         <section id="weather-results" class="hidden">
             <h2>Weather Forecast</h2>
             <ul id="weather-list"></ul>
@@ -72,31 +76,14 @@
             <button class="restart-form button">PICK A DIFFERENT CITY</button>
         </section>
     </div>
-        <footer>
-            <p>App by Angela Masajo</p>
-        </footer>
+    <footer>
+        <p>App by Angela Masajo</p>
+    </footer>
 
-    
-    <!-- <script>
-    (function() {
-        var cors_api_host = 'cors-anywhere.herokuapp.com';
-        var cors_api_url = 'https://' + cors_api_host + '/';
-        var slice = [].slice;
-        var origin = window.location.protocol + '//' + window.location.host;
-        var open = XMLHttpRequest.prototype.open;
-        XMLHttpRequest.prototype.open = function() {
-            var args = slice.call(arguments);
-            var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
-            if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
-                targetOrigin[1] !== cors_api_host) {
-                args[1] = cors_api_url + args[1];
-            }
-            return open.apply(this, args);
-        };
-    });
-    </script> -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="index.js"></script>
-    
+
 </body>
+
 </html>

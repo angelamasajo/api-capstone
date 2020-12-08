@@ -7,8 +7,7 @@ let current_obj = {};
 
 
 // FETCHING WEATHER INFORMATION
-function getWeatherInfo (cityNameWeather) {
-    console.log(cityNameWeather)
+function getWeatherInfo(cityNameWeather) {
     //replacing spaces with +
     cityNameWeather = cityNameWeather.replace(/ /g, '+');
     //fetching woeid info from city input
@@ -20,7 +19,7 @@ function getWeatherInfo (cityNameWeather) {
             }
         })
         .then(responseJson => displayWeatherResults(responseJson))
-        .catch(error => alert ('Something went wrong.'))
+        .catch(error => alert('Something went wrong.'))
 }
 
 
@@ -45,17 +44,14 @@ function displayWeatherResults(responseJson) {
 
 
 
-function pickDay () {
+function pickDay() {
     $('#weather-results').on('submit', event => {
         event.preventDefault();
-        console.log('pickDay ran');
         //clears out the list
         //assigning variables; goal is to include name and address of the brewery in the final message
         let date = $(event.target).closest('#pick-day-form').find('#inputWeather').text();
         current_obj.date = date;
-        console.log(date);
         let weatherDescription = $(event.target).closest('#pick-day-form').find('#weather-description').text();
-        console.log(weatherDescription);
         $('#weather-results').empty();
     })
 }
@@ -65,8 +61,8 @@ function pickDay () {
 //------------------------BREWERY INFO----------------------------//
 
 //FETCHING BREWERY INFORMATION
-function getBreweryInfo (cityName) {
-    cityName = cityName.replace(/ /g,"_");
+function getBreweryInfo(cityName) {
+    cityName = cityName.replace(/ /g, "_");
     let url = `https://api.openbrewerydb.org/breweries?by_city=${cityName}`
 
     fetch(url)
@@ -76,13 +72,12 @@ function getBreweryInfo (cityName) {
             }
         })
         .then(responseJson => displayResults(responseJson))
-        .catch(error => alert ('Something went wrong.'));
+        .catch(error => alert('Something went wrong.'));
 }
 
 
 //DISPLAYING BREWERY SEARCH RESULTS
 function displayResults(responseJson) {
-    console.log(responseJson);
     $('#brewery-list').empty();
     for (let i = 0; i < responseJson.length; i++) {
         $('#brewery-list').append(
@@ -100,23 +95,18 @@ function displayResults(responseJson) {
     $('#brewery-results').removeClass('hidden');
 };
 
-function pickBrewery () {
+function pickBrewery() {
     $('#brewery-results').on('submit', event => {
         event.preventDefault();
-        console.log('pickBrewery ran');
         //clears out the list
-        //assigning variables; goal is to include name and address of the brewery in the final message
+        //assigning variables
         let title = $(event.target).closest('#pick-brewery-form').find('#input').text();
         current_obj.title = title
-        console.log(title);
         let address = $(event.target).closest('#pick-brewery-form').find('#brewery-address').text();
         current_obj.address = address
-        console.log(address);
         let cityBrewery = $(event.target).closest('#pick-brewery-form').find('#brewery-city').text();
         current_obj.cityBrewery = cityBrewery
-        console.log(cityBrewery);
         $('#brewery-results').empty();
-        //adding the brewery name and address in the final message to copy and paste
         $('.message').removeClass('hidden');
         displayData(current_obj);
     })
@@ -126,7 +116,7 @@ function pickBrewery () {
 //---------------FINAL MESSAGE DISPLAY-------------------//
 
 
-function displayData(current_obj) { 
+function displayData(current_obj) {
     $('.message').append(
         `<h3> Now that you've chosen your time and location, copy and paste 
         the information below and send to your friends!
@@ -137,7 +127,7 @@ function displayData(current_obj) {
         The weather is supposed to be nicest on ${current_obj.date}, 
         so it's probably a good idea to go then! 
         Please respond to this message if you can make it so we can 
-        get more details figured out. Hope you can make it! </p>` 
+        get more details figured out. Hope you can make it! </p>`
     )
 }
 
@@ -149,11 +139,11 @@ function watchBrewerySearchForm() {
     $('#brewery-form').submit(event => {
         event.preventDefault();
         const cityName = $('#city-brewery').val();
-        getBreweryInfo (cityName);
+        getBreweryInfo(cityName);
     });
 }
 
-function onWeatherSubmit (cityNameWeather) {
+function onWeatherSubmit(cityNameWeather) {
     $('#weather-form').submit(event => {
         event.preventDefault();
         const cityNameWeather = $('#city').val();
@@ -166,10 +156,11 @@ function onWeatherSubmit (cityNameWeather) {
 function handleRestartForm() {
 
     $('#msg-template').on('click', '.restart-form', (event) => {
-      event.preventDefault();
-      location.reload();
+        event.preventDefault();
+        location.reload();
     }
-)};
+    )
+};
 
 $(onWeatherSubmit)
 $(watchBrewerySearchForm);
