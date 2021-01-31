@@ -1,7 +1,7 @@
 # To Beer or Not To Beer
 ## API Hack Capstone Project
 
-App Link: https://angelamasajo.github.io/api-capstone/
+App Link: https://angelamasajo.github.io/to-beer-or-not-to-beer/
 
 GitHub Repo: https://github.com/angelamasajo/api-capstone
 
